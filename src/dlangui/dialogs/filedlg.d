@@ -297,14 +297,14 @@ class FileDialog : Dialog, CustomGridCellAdapter {
     }
     /// predicate for sorting items - SIZE
     static bool compareItemsBySize(ref DirEntry item1, ref DirEntry item2) {
-        return ((item1.isDir && !item2.isDir) 
+        return ((item1.isDir && !item2.isDir)
                 || ((item1.isDir && item2.isDir) && (item1.name < item2.name))
                 || ((!item1.isDir && !item2.isDir) && (item1.size < item2.size))
                 );
     }
     /// predicate for sorting items - SIZE DESC
     static bool compareItemsBySizeDesc(ref DirEntry item1, ref DirEntry item2) {
-        return ((item1.isDir && !item2.isDir) 
+        return ((item1.isDir && !item2.isDir)
                 || ((item1.isDir && item2.isDir) && (item1.name < item2.name))
                 || ((!item1.isDir && !item2.isDir) && (item1.size > item2.size))
                 );
@@ -374,7 +374,7 @@ class FileDialog : Dialog, CustomGridCellAdapter {
             return "----.--.-- --:--";
         } else {
             //date = "%04d.%02d.%02d %02d:%02d:%02d".format(ts.year, ts.month, ts.day, ts.hour, ts.minute, ts.second);
-            return "%04d.%02d.%02d %02d:%02d".format(ts.year, ts.month, ts.day, ts.hour, ts.minute);
+            return "%04d.%02d.%02d %02d:%02d".format(ts.get.year, ts.get.month, ts.get.day, ts.get.hour, ts.get.minute);
         }
     }
 
@@ -715,7 +715,7 @@ class FileDialog : Dialog, CustomGridCellAdapter {
     override void initialize() {
         // remember filename specified by user, file grid initialization can change it
         string defaultFilename = _filename;
-        
+
         _roots = getRootPaths() ~ getBookmarkPaths();
 
         layoutWidth(FILL_PARENT).layoutHeight(FILL_PARENT).minWidth(WIDGET_STYLE_CONSOLE ? 50 : 600);

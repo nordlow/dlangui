@@ -35,63 +35,63 @@ struct vec2 {
         vec[0] = x;
         vec[1] = y;
     }
-    ref vec2 opAssign(float[2] v) {
+    ref vec2 opAssign(float[2] v) return {
         vec = v;
         return this;
     }
-    ref vec2 opAssign(vec2 v) {
+    ref vec2 opAssign(vec2 v) return {
         vec = v.vec;
         return this;
     }
     /// fill all components of vector with specified value
-    ref vec2 clear(float v) {
+    ref vec2 clear(float v) return {
         vec[0] = vec[1] = v;
         return this;
     }
     /// add value to all components of vector
-    ref vec2 add(float v) {
+    ref vec2 add(float v) return {
         vec[0] += v;
         vec[1] += v;
         return this;
     }
     /// multiply all components of vector by value
-    ref vec2 mul(float v) {
+    ref vec2 mul(float v) return {
         vec[0] *= v;
         vec[1] *= v;
         return this;
     }
     /// subtract value from all components of vector
-    ref vec2 sub(float v) {
+    ref vec2 sub(float v) return {
         vec[0] -= v;
         vec[1] -= v;
         return this;
     }
     /// divide all components of vector by value
-    ref vec2 div(float v) {
+    ref vec2 div(float v) return {
         vec[0] /= v;
         vec[1] /= v;
         return this;
     }
     /// add components of another vector to corresponding components of this vector
-    ref vec2 add(vec2 v) {
+    ref vec2 add(vec2 v) return {
         vec[0] += v.vec[0];
         vec[1] += v.vec[1];
         return this;
     }
     /// multiply components of this vector  by corresponding components of another vector
-    ref vec2 mul(vec2 v) {
+    ref vec2 mul(vec2 v) return {
         vec[0] *= v.vec[0];
         vec[1] *= v.vec[1];
         return this;
     }
     /// subtract components of another vector from corresponding components of this vector
-    ref vec2 sub(vec2 v) {
+    ref vec2 sub(vec2 v) return {
         vec[0] -= v.vec[0];
         vec[1] -= v.vec[1];
         return this;
     }
     /// divide components of this vector  by corresponding components of another vector
-    ref vec2 div(vec2 v) {
+    ref vec2 div(vec2 v) return {
         vec[0] /= v.vec[0];
         vec[1] /= v.vec[1];
         return this;
@@ -292,76 +292,76 @@ struct vec3 {
         vec[1] = y;
         vec[2] = z;
     }
-    ref vec3 opAssign(float[3] v) {
+    ref vec3 opAssign(float[3] v) return {
         vec = v;
         return this;
     }
-    ref vec3 opAssign(vec3 v) {
+    ref vec3 opAssign(vec3 v) return {
         vec = v.vec;
         return this;
     }
-    ref vec3 opAssign(float x, float y, float z) {
+    ref vec3 opAssign(float x, float y, float z) return {
         vec[0] = x;
         vec[1] = y;
         vec[2] = z;
         return this;
     }
     /// fill all components of vector with specified value
-    ref vec3 clear(float v) {
+    ref vec3 clear(float v) return {
         vec[0] = vec[1] = vec[2] = v;
         return this;
     }
     /// add value to all components of vector
-    ref vec3 add(float v) {
+    ref vec3 add(float v) return {
         vec[0] += v;
         vec[1] += v;
         vec[2] += v;
         return this;
     }
     /// multiply all components of vector by value
-    ref vec3 mul(float v) {
+    ref vec3 mul(float v) return {
         vec[0] *= v;
         vec[1] *= v;
         vec[2] *= v;
         return this;
     }
     /// subtract value from all components of vector
-    ref vec3 sub(float v) {
+    ref vec3 sub(float v) return {
         vec[0] -= v;
         vec[1] -= v;
         vec[2] -= v;
         return this;
     }
     /// divide all components of vector by value
-    ref vec3 div(float v) {
+    ref vec3 div(float v) return {
         vec[0] /= v;
         vec[1] /= v;
         vec[2] /= v;
         return this;
     }
     /// add components of another vector to corresponding components of this vector
-    ref vec3 add(vec3 v) {
+    ref vec3 add(vec3 v) return {
         vec[0] += v.vec[0];
         vec[1] += v.vec[1];
         vec[2] += v.vec[2];
         return this;
     }
     /// multiply components of this vector  by corresponding components of another vector
-    ref vec3 mul(vec3 v) {
+    ref vec3 mul(vec3 v) return {
         vec[0] *= v.vec[0];
         vec[1] *= v.vec[1];
         vec[2] *= v.vec[2];
         return this;
     }
     /// subtract components of another vector from corresponding components of this vector
-    ref vec3 sub(vec3 v) {
+    ref vec3 sub(vec3 v) return {
         vec[0] -= v.vec[0];
         vec[1] -= v.vec[1];
         vec[2] -= v.vec[2];
         return this;
     }
     /// divide components of this vector  by corresponding components of another vector
-    ref vec3 div(vec3 v) {
+    ref vec3 div(vec3 v) return {
         vec[0] /= v.vec[0];
         vec[1] /= v.vec[1];
         vec[2] /= v.vec[2];
@@ -599,22 +599,22 @@ struct vec4 {
         vec[2] = v.vec[2];
         vec[3] = 1.0f;
     }
-    ref vec4 opAssign(const float[4] v) {
+    ref vec4 opAssign(const float[4] v) return {
         vec = v;
         return this;
     }
-    ref vec4 opAssign(const vec4 v) {
+    ref vec4 opAssign(const vec4 v) return {
         vec = v.vec;
         return this;
     }
-    ref vec4 opAssign(float x, float y, float z, float w) {
+    ref vec4 opAssign(float x, float y, float z, float w) return {
         vec[0] = x;
         vec[1] = y;
         vec[2] = z;
         vec[3] = w;
         return this;
     }
-    ref vec4 opAssign(const vec3 v) {
+    ref vec4 opAssign(const vec3 v) return {
         vec[0] = v.vec[0];
         vec[1] = v.vec[1];
         vec[2] = v.vec[2];
@@ -624,12 +624,12 @@ struct vec4 {
 
 
     /// fill all components of vector with specified value
-    ref vec4 clear(float v) {
+    ref vec4 clear(float v) return {
         vec[0] = vec[1] = vec[2] = vec[3] = v;
         return this;
     }
     /// add value to all components of vector
-    ref vec4 add(float v) {
+    ref vec4 add(float v) return {
         vec[0] += v;
         vec[1] += v;
         vec[2] += v;
@@ -637,7 +637,7 @@ struct vec4 {
         return this;
     }
     /// multiply all components of vector by value
-    ref vec4 mul(float v) {
+    ref vec4 mul(float v) return {
         vec[0] *= v;
         vec[1] *= v;
         vec[2] *= v;
@@ -645,7 +645,7 @@ struct vec4 {
         return this;
     }
     /// subtract value from all components of vector
-    ref vec4 sub(float v) {
+    ref vec4 sub(float v) return {
         vec[0] -= v;
         vec[1] -= v;
         vec[2] -= v;
@@ -653,7 +653,7 @@ struct vec4 {
         return this;
     }
     /// divide all components of vector by value
-    ref vec4 div(float v) {
+    ref vec4 div(float v) return {
         vec[0] /= v;
         vec[1] /= v;
         vec[2] /= v;
@@ -661,7 +661,7 @@ struct vec4 {
         return this;
     }
     /// add components of another vector to corresponding components of this vector
-    ref vec4 add(const vec4 v) {
+    ref vec4 add(const vec4 v) return {
         vec[0] += v.vec[0];
         vec[1] += v.vec[1];
         vec[2] += v.vec[2];
@@ -669,7 +669,7 @@ struct vec4 {
         return this;
     }
     /// multiply components of this vector  by corresponding components of another vector
-    ref vec4 mul(vec4 v) {
+    ref vec4 mul(vec4 v) return {
         vec[0] *= v.vec[0];
         vec[1] *= v.vec[1];
         vec[2] *= v.vec[2];
@@ -677,7 +677,7 @@ struct vec4 {
         return this;
     }
     /// subtract components of another vector from corresponding components of this vector
-    ref vec4 sub(vec4 v) {
+    ref vec4 sub(vec4 v) return {
         vec[0] -= v.vec[0];
         vec[1] -= v.vec[1];
         vec[2] -= v.vec[2];
@@ -685,7 +685,7 @@ struct vec4 {
         return this;
     }
     /// divide components of this vector  by corresponding components of another vector
-    ref vec4 div(vec4 v) {
+    ref vec4 div(vec4 v) return {
         vec[0] /= v.vec[0];
         vec[1] /= v.vec[1];
         vec[2] /= v.vec[2];
@@ -920,15 +920,15 @@ struct mat4 {
         m[0..16] = v[0..16];
     }
 
-    ref mat4 opAssign(const ref mat4 v) {
+    ref mat4 opAssign(const ref mat4 v) return {
         m[0..16] = v.m[0..16];
         return this;
     }
-    ref mat4 opAssign(const  mat4 v) {
+    ref mat4 opAssign(const  mat4 v) return {
         m[0..16] = v.m[0..16];
         return this;
     }
-    ref mat4 opAssign(const float[16] v) {
+    ref mat4 opAssign(const float[16] v) return {
         m[0..16] = v[0..16];
         return this;
     }
@@ -992,7 +992,7 @@ struct mat4 {
         m[3*4 + 3] = 0.0f;
     }
 
-    ref mat4 lookAt(const vec3 eye, const vec3 center, const vec3 up) {
+    ref mat4 lookAt(const vec3 eye, const vec3 center, const vec3 up) return {
         vec3 forward = (center - eye).normalized();
         vec3 side = vec3.crossProduct(forward, up).normalized();
         vec3 upVector = vec3.crossProduct(side, forward);
@@ -1082,13 +1082,13 @@ struct mat4 {
         return inverse;
     }
 
-    ref mat4 setLookAt(const vec3 eye, const vec3 center, const vec3 up) {
+    ref mat4 setLookAt(const vec3 eye, const vec3 center, const vec3 up) return {
         setIdentity();
         lookAt(eye, center, up);
         return this;
     }
 
-    ref mat4 translate(const vec3 v) {
+    ref mat4 translate(const vec3 v) return {
         m[3*4 + 0] += m[0*4 + 0] * v.x + m[1*4 + 0] * v.y + m[2*4 + 0] * v.z;
         m[3*4 + 1] += m[0*4 + 1] * v.x + m[1*4 + 1] * v.y + m[2*4 + 1] * v.z;
         m[3*4 + 2] += m[0*4 + 2] * v.x + m[1*4 + 2] * v.y + m[2*4 + 2] * v.z;
@@ -1096,7 +1096,7 @@ struct mat4 {
         return this;
     }
 
-    ref mat4 translate(float x, float y, float z) {
+    ref mat4 translate(float x, float y, float z) return {
         m[3*4 + 0] += m[0*4 + 0] * x + m[1*4 + 0] * y + m[2*4 + 0] * z;
         m[3*4 + 1] += m[0*4 + 1] * x + m[1*4 + 1] * y + m[2*4 + 1] * z;
         m[3*4 + 2] += m[0*4 + 2] * x + m[1*4 + 2] * y + m[2*4 + 2] * z;
@@ -1134,7 +1134,7 @@ struct mat4 {
     }
 
     /// multiply this matrix by another matrix
-    void opOpAssign(string op : "*")(const ref mat4 m2) {
+    void opOpAssign(string op : "*")(const ref mat4 m2) return {
         this = mul(this, m2);
     }
 
@@ -1274,7 +1274,7 @@ struct mat4 {
     }
 
     /// 2d index by row, col
-    ref float opIndex(int y, int x) {
+    ref float opIndex(int y, int x) return {
         return m[y*4 + x];
     }
 
@@ -1284,7 +1284,7 @@ struct mat4 {
     }
 
     /// scalar index by rows then (y*4 + x)
-    ref float opIndex(int index) {
+    ref float opIndex(int index) return {
         return m[index];
     }
 
@@ -1294,11 +1294,11 @@ struct mat4 {
     }
 
     /// set to identity: fill all items of matrix with zero except main diagonal items which will be assigned to 1.0f
-    ref mat4 setIdentity() {
+    ref mat4 setIdentity() return {
         return setDiagonal(1.0f);
     }
     /// set to diagonal: fill all items of matrix with zero except main diagonal items which will be assigned to v
-    ref mat4 setDiagonal(float v) {
+    ref mat4 setDiagonal(float v) return {
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < 4; y++) {
                 if (x == y)
@@ -1310,13 +1310,13 @@ struct mat4 {
         return this;
     }
     /// fill all items of matrix with specified value
-    ref mat4 fill(float v) {
+    ref mat4 fill(float v) return {
         foreach(ref f; m)
             f = v;
         return this;
     }
     /// fill all items of matrix with zero
-    ref mat4 setZero() {
+    ref mat4 setZero() return {
         foreach(ref f; m)
             f = 0.0f;
         return this;
@@ -1355,25 +1355,25 @@ struct mat4 {
     }
 
     /// inplace rotate around Z axis
-    ref mat4 rotatez(float angle) {
+    ref mat4 rotatez(float angle) return {
         return rotate(angle, 0, 0, 1);
     }
 
     /// inplace rotate around X axis
-    ref mat4 rotatex(float angle) {
+    ref mat4 rotatex(float angle) return {
         return rotate(angle, 1, 0, 0);
     }
 
     /// inplace rotate around Y axis
-    ref mat4 rotatey(float angle) {
+    ref mat4 rotatey(float angle) return {
         return rotate(angle, 0, 1, 0);
     }
 
-    ref mat4 rotate(float angle, const vec3 axis) {
+    ref mat4 rotate(float angle, const vec3 axis) return {
         return rotate(angle, axis.x, axis.y, axis.z);
     }
 
-    ref mat4 rotate(float angle, float x, float y, float z) {
+    ref mat4 rotate(float angle, float x, float y, float z) return {
         if (angle == 0.0f)
             return this;
         mat4 m;
@@ -1467,19 +1467,19 @@ struct mat4 {
         return this;
     }
 
-    ref mat4 rotateX(float angle) {
+    ref mat4 rotateX(float angle) return {
         return rotate(angle, 1, 0, 0);
     }
 
-    ref mat4 rotateY(float angle) {
+    ref mat4 rotateY(float angle) return {
         return rotate(angle, 0, 1, 0);
     }
 
-    ref mat4 rotateZ(float angle) {
+    ref mat4 rotateZ(float angle) return {
         return rotate(angle, 0, 0, 1);
     }
 
-    ref mat4 scale(float x, float y, float z) {
+    ref mat4 scale(float x, float y, float z) return {
         m[0*4 + 0] *= x;
         m[0*4 + 1] *= x;
         m[0*4 + 2] *= x;
@@ -1495,7 +1495,7 @@ struct mat4 {
         return this;
     }
 
-    ref mat4 scale(float v) {
+    ref mat4 scale(float v) return {
         m[0*4 + 0] *= v;
         m[0*4 + 1] *= v;
         m[0*4 + 2] *= v;
@@ -1515,7 +1515,7 @@ struct mat4 {
         return this;
     }
 
-    ref mat4 scale(const vec3 v) {
+    ref mat4 scale(const vec3 v) return {
         m[0*4 + 0] *= v.x;
         m[0*4 + 1] *= v.x;
         m[0*4 + 2] *= v.x;
@@ -1787,8 +1787,8 @@ PointF bezierQuadratic(const PointF[] cp, float t) pure @nogc @safe
 }
 
 /// cubic bezier (first) derivative
-PointF bezierCubicDerivative(const PointF[] cp, float t) pure @nogc @safe 
-    in { assert(cp.length > 3); } do 
+PointF bezierCubicDerivative(const PointF[] cp, float t) pure @nogc @safe
+    in { assert(cp.length > 3); } do
 {
     auto p0 = cp[0];
     auto p1 = cp[1];
@@ -1805,8 +1805,8 @@ PointF bezierCubicDerivative(const PointF[] cp, float t) pure @nogc @safe
 }
 
 /// quadratic bezier (first) derivative
-PointF bezierQuadraticDerivative(const PointF[] cp, float t) pure @nogc @safe 
-    in { assert(cp.length > 2); } do 
+PointF bezierQuadraticDerivative(const PointF[] cp, float t) pure @nogc @safe
+    in { assert(cp.length > 2); } do
 {
     auto p0 = cp[0];
     auto p1 = cp[1];
@@ -1834,8 +1834,8 @@ PointF bezierQuadraticDirection(const PointF[] cp, float t) {
 }
 
 /// templated version of bezier flatten curve function, allocates temporary buffer
-PointF[] flattenBezier(alias BezierFunc)(const PointF[] cp, int segmentCountInclusive) 
-    if (is(typeof(BezierFunc)==function)) 
+PointF[] flattenBezier(alias BezierFunc)(const PointF[] cp, int segmentCountInclusive)
+    if (is(typeof(BezierFunc)==function))
 {
     if (segmentCountInclusive < 2)
         return PointF[].init;
@@ -1846,7 +1846,7 @@ PointF[] flattenBezier(alias BezierFunc)(const PointF[] cp, int segmentCountIncl
 
 /// flatten bezier curve function, writes to provided buffer instead of allocation
 void flattenBezier(alias BezierFunc)(const PointF[] cp, int segmentCountInclusive, PointF[] outSegments)
-    if (is(typeof(BezierFunc)==function)) 
+    if (is(typeof(BezierFunc)==function))
 {
     if (segmentCountInclusive < 2)
         return;
